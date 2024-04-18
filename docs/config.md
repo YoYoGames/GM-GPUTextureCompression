@@ -7,7 +7,7 @@ This feature relies on third party conversion tools that the sample needs to run
 * For ASTC textures it uses `astcenc` and `astcenc-sse4.1.exe` from [ASTC-Encoder](https://github.com/ARM-software/astc-encoder) 
 * For bcN textures it uses the `bc7enc` and `bc7enc.exe` from [bc7enc](https://github.com/richgel999/bc7enc)
 
-> [!IMPORTANT]
+> [!WARNING]
 > Please ensure that your project complies with the licensing agreements of the encoders provided. These encoders operate under different licenses, all of which are included within the `<demo>/extensions/TextureEncode/` folder. It is essential to review and adhere to these licenses when incorporating the encoders into your project.
 
 > [!NOTE]

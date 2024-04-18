@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="img/favicon.ico" />
+    <title>Configuration - GM-GPUTextureCompression</title>
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+        <link href="assets/css/gmext_style.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Configuration";
+        var mkdocs_page_input_path = "config.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/gml.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="." class="icon icon-home"> GM-GPUTextureCompression
+        </a>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="home.html">GPU Texture Compression</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="config.html">Configuration</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#project-setup">Project Setup</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#astc-compression">ASTC Compression:</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#bcn-compression">BCN Compression:</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#gnf">GNF:</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href=".">GM-GPUTextureCompression</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Configuration</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/YoYoGames/GM-GPUTextureCompression/edit/master/docs/config.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="configuration">Configuration</h1>
+<p>This feature relies on third party conversion tools that the sample needs to run:</p>
+<ul>
+<li>For ASTC textures it uses <code>astcenc</code> and <code>astcenc-sse4.1.exe</code> from <a href="https://github.com/ARM-software/astc-encoder">ASTC-Encoder</a></li>
+<li>For bcN textures it uses the <code>bc7enc</code> and <code>bc7enc.exe</code> from <a href="https://github.com/richgel999/bc7enc">bc7enc</a></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Please ensure that your project complies with the licensing agreements of the encoders provided. These encoders operate under different licenses, all of which are included within the <code>&lt;demo&gt;/extensions/TextureEncode/</code> folder. It is essential to review and adhere to these licenses when incorporating the encoders into your project.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you prefer you can swap out to use whichever encoder you prefer but you will need to modify the <code>ConvTextures.bat</code>| <code>ConvTextures.sh</code> and texture group settings in order to be able to use a different encoder. Console platforms will use encoders from within the relevant SDK directories.</p>
+</div>
+<h2 id="project-setup">Project Setup</h2>
+<p>Texture compression options are set on a per-Texture group basis. So first you want to open your Texture Group window from the <code>Tools → Texture Group</code> dropdown menu.</p>
+<p><img alt="" src="assets/gpu_compression_ide_texture_groups.png" /></p>
+<p>Set the texture group that you want to use to Texture Group Format <code>"Custom"</code> and add the command line parameters for the conversion that you wish to use to <code>"Custom Options"</code>.</p>
+<p><img alt="" src="assets/gpu_compression_ide_setup.png" /></p>
+<blockquote>
+<p>[IMPORTANT] The string should start with the name of the tool that should be used to generate the textures. Below are the options for tool name, the platforms that support it and command line parameters that should be supplied alongside them.</p>
+</blockquote>
+<h3 id="astc-compression">ASTC Compression:</h3>
+<ul>
+<li>
+<p><strong>Example Custom Options:</strong> <code>"ASTC 6x6 -medium"</code> (produces a medium quality image using ASTC compression with a 6x6 block size)</p>
+</li>
+<li>
+<p><strong>Platforms:</strong> iOS, Switch, Android</p>
+</li>
+<li>
+<p><strong>Parameters:</strong> This should be passed after the name of the tool to be used.</p>
+<ul>
+<li>
+<p><strong>Block Size</strong> - this is the block size used when encoding the textures. Increasing the block size will reduce the memory footprint of the textures at the cost of image quality.</p>
+<ul>
+<li><strong>Available Options:</strong> <code>4x4</code>, <code>5x4</code>, <code>5x5</code>, <code>6x5</code>, <code>6x6</code>, <code>8x5</code>, <code>8x6</code>, <code>8x8</code>, <code>10x5</code>, <code>10x6</code>, <code>10x8</code>, <code>10x10</code>, <code>12x10</code>, <code>12x12</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Quality</strong> - this is the target quality for the output image. Increasing the quality will improve the image quality at the expense of project compile times.</p>
+<ul>
+<li><strong>Available Options:</strong> <code>-fastest</code>, <code>-fast</code>, <code>-medium</code>, <code>-thorough</code>, <code>-verythorough</code>, <code>-exhaustive</code> or numeric values from <code>0.0</code> to <code>100.0</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="bcn-compression">BCN Compression:</h3>
+<ul>
+<li>
+<p><strong>Example Custom Options:</strong></p>
+<ul>
+<li>
+<p><code>"BCN -u4"</code> (produces a very high quality image using BC7 compression)</p>
+</li>
+<li>
+<p><code>"BCN -3 -u2"</code> (produces a medium quality image using BC3 compression)</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Platforms:</strong> Windows, Mac (BC3 only), Xbox, PS4, PS5</p>
+</li>
+<li>
+<p><strong>Parameters:</strong> This should be passed after the name of the tool to be used.</p>
+<ul>
+<li>
+<p><strong>Encoding Type</strong> (<em>optional</em>) - this is the type of block compression that will be used. If nothing is supplied then BC7 is the default output. There may be different performance benefits for using alternative types of block compression on different platforms.</p>
+<ul>
+<li><strong>Available Options:</strong> <code>-3</code> (for BC3 compression)</li>
+</ul>
+</li>
+<li>
+<p><strong>Quality (<code>-u</code>)</strong> - this is the target quality for the output image. Increasing the quality will improve the image quality at the expense of project compile times.</p>
+<ul>
+<li><strong>Available Options:</strong><ul>
+<li>numeric values from <code>0</code> to <code>4</code> for BC7 textures</li>
+<li>numeric values from <code>0</code> to <code>5</code> for BC3 textures.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="gnf">GNF:</h3>
+<ul>
+<li>
+<p>Example Custom Options: <code>"GNF -f Bc7Unorm -b 0.5"</code> (produces a medium quality image using BC7 compression)</p>
+</li>
+<li>
+<p>Platforms: PS4, PS5</p>
+</li>
+<li>
+<p>Parameters:</p>
+<ul>
+<li>
+<p><strong>Image Format (<code>-f</code>)</strong> - this is the format of the image that will be output by the texture tool. There may be different performance benefits for using alternative types of block compression.</p>
+<ul>
+<li><strong>Available Options:</strong> <code>Bc3Unorm</code>, <code>Bc7Unorm</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Quality (<code>-b</code>)</strong> - this is the target quality for the output image. Increasing the quality will improve the image quality at the expense of project compile times.</p>
+<ul>
+<li><strong>Available Options:</strong> numeric values from <code>0.0</code> to <code>1.0</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="home.html" class="btn btn-neutral float-left" title="GPU Texture Compression"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p><p align="center">GameMaker 2024</p></p>
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/YoYoGames/GM-GPUTextureCompression" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="home.html" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = ".";</script>
+    <script src="js/theme_extra.js"></script>
+    <script src="js/theme.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/gml.min.js"></script>
+      <script src="assets/js/gmext_script.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
