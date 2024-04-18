@@ -1,0 +1,12 @@
+# VS and VSC folders
+**/.vs/
+**/.vsc/
+
+# Temporary IDE files (from changing line format)
+*.sh-e
+
+# MacOS cache files
+.DS_Store
+
+# Ignore project options
+source/GPUTextureCompression_gml/options/

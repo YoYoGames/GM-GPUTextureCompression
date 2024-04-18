@@ -1,0 +1,51 @@
+{
+  "$GMTileSet":"",
+  "%Name":"ts_world",
+  "autoTileSets":[
+    {"$GMAutoTileSet":"","%Name":"normal","closed_edge":false,"name":"normal","resourceType":"GMAutoTileSet","resourceVersion":"2.0","tiles":[86,102,100,74,78,85,79,73,76,91,87,75,98,97,99,0,],},
+    {"$GMAutoTileSet":"","%Name":"mossy","closed_edge":false,"name":"mossy","resourceType":"GMAutoTileSet","resourceVersion":"2.0","tiles":[14,30,28,2,6,13,7,1,4,19,15,3,26,25,27,0,],},
+    {"$GMAutoTileSet":"","%Name":"underground","closed_edge":false,"name":"underground","resourceType":"GMAutoTileSet","resourceVersion":"2.0","tiles":[50,66,64,38,42,49,43,37,40,55,51,39,62,61,63,0,],},
+  ],
+  "macroPageTiles":{
+    "SerialiseHeight":0,
+    "SerialiseWidth":0,
+    "TileSerialiseData":[],
+  },
+  "name":"ts_world",
+  "out_columns":10,
+  "out_tilehborder":2,
+  "out_tilevborder":2,
+  "parent":{
+    "name":"Tile Sets",
+    "path":"folders/Tile Sets.yy",
+  },
+  "resourceType":"GMTileSet",
+  "resourceVersion":"2.0",
+  "spriteId":{
+    "name":"spr_tileset_world",
+    "path":"sprites/spr_tileset_world/spr_tileset_world.yy",
+  },
+  "spriteNoExport":true,
+  "textureGroupId":{
+    "name":"tg_game",
+    "path":"texturegroups/tg_game",
+  },
+  "tileAnimation":{
+    "FrameData":[
+      0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,
+      37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,
+      71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,
+      104,105,106,107,
+    ],
+    "SerialiseFrameCount":1,
+  },
+  "tileAnimationFrames":[],
+  "tileAnimationSpeed":15.0,
+  "tileHeight":128,
+  "tilehsep":0,
+  "tilevsep":0,
+  "tileWidth":128,
+  "tilexoff":0,
+  "tileyoff":0,
+  "tile_count":108,
+}
