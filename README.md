@@ -17,6 +17,7 @@ In order to use this feature you will need GM 2024.400+
 ## Documentation
 
 * Check [the documentation](../../wiki)
+* Read about [Texture Compression in the GM manual](https://manual.gamemaker.io/beta/en/#t=Settings%2FTexture_Information%2FTexture_Compression.htm)
 
 The online documentation is regularly updated to ensure it contains the most current information. For those who prefer a different format, we also offer a HTML version. This HTML is directly converted from the GitHub Wiki content, ensuring consistency, although it may follow slightly behind in updates.
 
