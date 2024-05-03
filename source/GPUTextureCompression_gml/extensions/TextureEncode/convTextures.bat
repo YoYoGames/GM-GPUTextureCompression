@@ -4,7 +4,7 @@ echo "Calling convTextures"
 if %ToolType%==ASTC (
 	@ECHO ON
 	echo "Encoding as ASTC"
-	%~dp0astcenc-sse4.1.exe -cl %InputFile% %OutputFile%.astc %CustomOptions%
+	"%~dp0astcenc-sse4.1.exe" -cl %InputFile% %OutputFile%.astc %CustomOptions%
 	copy %OutputFile%.astc %OutputFile% /y
 )
 
@@ -12,7 +12,7 @@ if %ToolType%==ASTC (
 if %ToolType%==BCN (
 	@ECHO ON
 	echo "Encoding as BC7 DDS"
-	%~dp0bc7enc.exe -g %CustomOptions% %InputFile% %OutputFile%.dds
+	"%~dp0bc7enc.exe" -g %CustomOptions% %InputFile% %OutputFile%.dds
 	copy %OutputFile%.dds %OutputFile% /y
 )
 
@@ -20,7 +20,6 @@ if %ToolType%==BCN (
 if %ToolType%==GNF_PS4 (
 	@ECHO ON
 	echo "Encoding as BC7 GNF for PS4"
-	set PATH_TO_EXE=
 	"%SCE_ORBIS_SDK_DIR%\host_tools\bin\orbis-image2gnf.exe" -m 1 -s RLL_GLL_BLL_ALL %CustomOptions% -i %InputFile% -o %OutputFile%.gnf
 	copy %OutputFile%.gnf %OutputFile% /y
 )
