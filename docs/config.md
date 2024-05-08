@@ -24,7 +24,7 @@ Set the texture group that you want to use to Texture Group Format `"Custom"` an
 
 ![](assets/gpu_compression_ide_setup.png)
 
-> [IMPORTANT] The string should start with the name of the tool that should be used to generate the textures. Below are the options for tool name, the platforms that support it and command line parameters that should be supplied alongside them.
+> [!IMPORTANT] The string should start with the name of the tool that should be used to generate the textures. Below are the options for tool name, the platforms that support it and command line parameters that should be supplied alongside them.
 
 ### ASTC Compression:
 
@@ -79,3 +79,5 @@ Set the texture group that you want to use to Texture Group Format `"Custom"` an
     * **Quality (`-b`)** - this is the target quality for the output image. Increasing the quality will improve the image quality at the expense of project compile times. 
     
         * **Available Options:** numeric values from `0.0` to `1.0`
+		
+> [!IMPORTANT] "Separate Texture Page" can be enabled on sprites that are assigned to a texture group that is using GPU texture compression, however you should ensure that the dimensions of the sprite are divisible by the block dimensions of the compression format that is being used. For BCN/GNF the block size is fixed to 4x4, for ASTC the block size is specified by the custom options in the texture group.
