@@ -78,13 +78,12 @@
     {"$GMFolder":"","%Name":"Timelines","folderPath":"folders/Timelines.yy","name":"Timelines","resourceType":"GMFolder","resourceVersion":"2.0",},
   ],
   "IncludedFiles":[
-    {"$GMIncludedFile":"","%Name":"GM-GPUTextureCompression Unix Docs.html","CopyToMask":0,"filePath":"datafiles","name":"GM-GPUTextureCompression Unix Docs.html","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
-    {"$GMIncludedFile":"","%Name":"GM-GPUTextureCompression Win Docs.html","CopyToMask":0,"filePath":"datafiles","name":"GM-GPUTextureCompression Win Docs.html","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
+    {"$GMIncludedFile":"","%Name":"GM-GPUTextureCompression.html","CopyToMask":0,"filePath":"datafiles","name":"GM-GPUTextureCompression.html","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
   ],
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.400.0.532",
+    "IDEVersion":"2024.4.1.152",
   },
   "name":"GPUTextureCompression",
   "resources":[
