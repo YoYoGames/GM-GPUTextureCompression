@@ -10,3 +10,5 @@
 
 # Ignore project options
 source/GPUTextureCompression_gml/options/
+
+output/
