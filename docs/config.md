@@ -24,7 +24,8 @@ Set the texture group that you want to use to Texture Group Format `"Custom"` an
 
 ![](assets/gpu_compression_ide_setup.png)
 
-> [!IMPORTANT] The string should start with the name of the tool that should be used to generate the textures. Below are the options for tool name, the platforms that support it and command line parameters that should be supplied alongside them.
+> [!IMPORTANT] 
+> The string should start with the name of the tool that should be used to generate the textures. Below are the options for tool name, the platforms that support it and command line parameters that should be supplied alongside them.
 
 ### ASTC Compression:
 
