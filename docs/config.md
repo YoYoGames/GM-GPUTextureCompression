@@ -31,7 +31,7 @@ Set the texture group that you want to use to Texture Group Format `"Custom"` an
 
 * **Example Custom Options:** `"ASTC 6x6 -medium"` (produces a medium quality image using ASTC compression with a 6x6 block size)
 
-* **Platforms:** iOS, Switch, Android
+* **Platforms:** iOS, Switch, Android, GX.Games (On Mobile)
 
 * **Parameters:** This should be passed after the name of the tool to be used.
 
@@ -51,7 +51,7 @@ Set the texture group that you want to use to Texture Group Format `"Custom"` an
 
     * `"BCN -3 -u2"` (produces a medium quality image using BC3 compression)
 
-* **Platforms:** Windows, Mac (BC3 only), Xbox, PS4, PS5
+* **Platforms:** Windows, Mac (BC3 only), Xbox, PS4, PS5, GX.Games (On Desktop)
 
 * **Parameters:** This should be passed after the name of the tool to be used.
 
