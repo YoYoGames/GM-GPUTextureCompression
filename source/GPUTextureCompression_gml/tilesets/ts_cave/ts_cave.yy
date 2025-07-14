@@ -1,5 +1,5 @@
 {
-  "$GMTileSet":"",
+  "$GMTileSet":"v1",
   "%Name":"ts_cave",
   "autoTileSets":[],
   "macroPageTiles":{
@@ -25,10 +25,6 @@
   "textureGroupId":{
     "name":"tg_game",
     "path":"texturegroups/tg_game",
-  },
-  "tileAnimation":{
-    "FrameData":[0,1,2,3,4,5,],
-    "SerialiseFrameCount":1,
   },
   "tileAnimationFrames":[],
   "tileAnimationSpeed":15.0,

@@ -4,13 +4,14 @@ Repository for GameMaker's GPU Texture Compression Demo
 
 This sample aims to show you how you can use the new feature added to GMS2 April Beta runtimes. This has been added initially to the runtime with minmal IDE support in order to test and confirm functionality. Improved IDE support will be coming in the following months.
 
-This extension will work on Windows, macOS, Linux, iOS, Android, PS4, PS5, Xbox.
+This extension will work on Windows, macOS, Linux, iOS, Android, PS4, PS5, Xbox, GX.Games.
 
 ---
 
 ## Requirements
 
 In order to use this feature you will need GM 2024.400+
+In order to use this feature on GX.Games you will need GM 2024.14+
 
 ---
 
